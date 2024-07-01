@@ -1,8 +1,8 @@
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-import { Page } from '../../payload-types'
-import { fetchPage } from '../_api/fetchPage'
+import { Place } from '../../payload-types'
+import { fetchPlace } from '../_api/fetchPage'
 import { fetchPages } from '../_api/fetchPages'
 import { Gutter } from '../_components/Gutter'
 import RichText from '../_components/RichText'
@@ -13,11 +13,11 @@ interface PageParams {
   params: { slug: string }
 }
 
-export const PageTemplate: React.FC<{ page: Page | null | undefined }> = ({ page }) => (
+export const PageTemplate: React.FC<{ place: Place | null | undefined }> = ({ place: place }) => (
   <main className={classes.page}>
     <Gutter>
-      <h1>{page?.title}</h1>
-      <RichText content={page?.richText} />
+      <h1>{place?.name}</h1>
+      <RichText content={place?.content} />
     </Gutter>
   </main>
 )
@@ -25,13 +25,13 @@ export const PageTemplate: React.FC<{ page: Page | null | undefined }> = ({ page
 export default async function Page({ params: { slug = 'home' } }: PageParams) {
   const { isEnabled: isDraftMode } = draftMode()
 
-  const page = await fetchPage(slug, isDraftMode)
+  const page = await fetchPlace(slug, isDraftMode)
 
   if (page === null) {
     return notFound()
   }
 
-  return <PageTemplate page={page} />
+  return <PageTemplate place={page} />
 }
 
 export async function generateStaticParams() {

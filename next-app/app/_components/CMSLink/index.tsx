@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { Page } from '../../../payload-types'
+import { Place } from '../../../payload-types'
 import { Button } from '../Button'
 
 export type CMSLinkType = {
@@ -9,8 +9,8 @@ export type CMSLinkType = {
   url?: string
   newTab?: boolean
   reference?: {
-    value: string | Page
-    relationTo: 'pages'
+    value: string | Place
+    relationTo: 'places'
   }
   label?: string
   appearance?: 'default' | 'primary' | 'secondary'

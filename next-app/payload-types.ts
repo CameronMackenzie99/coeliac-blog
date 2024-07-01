@@ -8,46 +8,64 @@
 
 export interface Config {
   collections: {
-    pages: Page
     users: User
+    places: Place
     'payload-preferences': PayloadPreference
     'payload-migrations': PayloadMigration
   }
-  globals: {
-    'main-menu': MainMenu
-  }
+  globals: {}
 }
-export interface Page {
-  id: string
-  title: string
-  slug?: string
-  richText: {
-    [k: string]: unknown
-  }[]
-  updatedAt: string
-  createdAt: string
-  _status?: 'draft' | 'published'
-}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users".
+ */
 export interface User {
-  id: string
+  id: number
   updatedAt: string
   createdAt: string
   email: string
-  resetPasswordToken?: string
-  resetPasswordExpiration?: string
-  salt?: string
-  hash?: string
-  loginAttempts?: number
-  lockUntil?: string
-  password?: string
+  resetPasswordToken?: string | null
+  resetPasswordExpiration?: string | null
+  salt?: string | null
+  hash?: string | null
+  loginAttempts?: number | null
+  lockUntil?: string | null
+  password: string | null
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "places".
+ */
+export interface Place {
+  id: number
+  name?: string | null
+  slug?: string | null
+  address?: string | null
+  website?: string | null
+  location?: string | null
+  fullyGf?: boolean | null
+  lastDateOfVisit?: string | null
+  tags?: string | null
+  content?:
+    | {
+        [k: string]: unknown
+      }[]
+    | null
+  updatedAt: string
+  createdAt: string
+  _status?: ('draft' | 'published') | null
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-preferences".
+ */
 export interface PayloadPreference {
-  id: string
+  id: number
   user: {
     relationTo: 'users'
-    value: string | User
+    value: number | User
   }
-  key?: string
+  key?: string | null
   value?:
     | {
         [k: string]: unknown
@@ -60,42 +78,18 @@ export interface PayloadPreference {
   updatedAt: string
   createdAt: string
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-migrations".
+ */
 export interface PayloadMigration {
-  id: string
-  name?: string
-  batch?: number
+  id: number
+  name?: string | null
+  batch?: number | null
   updatedAt: string
   createdAt: string
 }
-export interface MainMenu {
-  id: string
-  navItems?: {
-    link: {
-      type?: 'reference' | 'custom'
-      newTab?: boolean
-      reference: {
-        relationTo: 'pages'
-        value: string | Page
-      }
-      url: string
-      label: string
-    }
-    id?: string
-  }[]
-  updatedAt?: string
-  createdAt?: string
-}
 
 declare module 'payload' {
-  export interface GeneratedTypes {
-    collections: {
-      pages: Page
-      users: User
-      'payload-preferences': PayloadPreference
-      'payload-migrations': PayloadMigration
-    }
-    globals: {
-      'main-menu': MainMenu
-    }
-  }
+  export interface GeneratedTypes extends Config {}
 }

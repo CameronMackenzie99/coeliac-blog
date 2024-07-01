@@ -2,20 +2,20 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { MainMenu } from '../../../payload-types'
+// import { MainMenu } from '../../../payload-types'
 import { CMSLink } from '../CMSLink'
 import { Gutter } from '../Gutter'
 
 import classes from './index.module.scss'
 
 export async function Header() {
-  const mainMenu: MainMenu = await fetch(
-    `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/globals/main-menu`,
-  ).then(res => res.json())
+  // const mainMenu: MainMenu = await fetch(
+  //   `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/globals/main-menu`,
+  // ).then(res => res.json())
 
-  const { navItems } = mainMenu
+  // const { navItems } = mainMenu
 
-  const hasNavItems = navItems && Array.isArray(navItems) && navItems.length > 0
+  // const hasNavItems = navItems && Array.isArray(navItems) && navItems.length > 0
 
   return (
     <header className={classes.header}>
@@ -34,13 +34,13 @@ export async function Header() {
             />
           </picture>
         </Link>
-        {hasNavItems && (
+        {/* {hasNavItems && (
           <nav className={classes.nav}>
             {navItems.map(({ link }, i) => {
               return <CMSLink key={i} {...link} />
             })}
           </nav>
-        )}
+        )} */}
       </Gutter>
     </header>
   )

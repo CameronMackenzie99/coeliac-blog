@@ -3,5 +3,6 @@ module.exports = {
   extends: ['plugin:@next/next/recommended', '@payloadcms'],
   rules: {
     'import/extensions': 'off',
+    endOfLine: 'auto',
   },
 }

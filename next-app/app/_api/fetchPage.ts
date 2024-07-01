@@ -1,11 +1,11 @@
 import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
 
-import type { Page } from '../../payload-types'
+import type { Place } from '../../payload-types'
 
-export const fetchPage = async (
+export const fetchPlace = async (
   slug: string,
   draft?: boolean,
-): Promise<Page | undefined | null> => {
+): Promise<Place | undefined | null> => {
   let payloadToken: RequestCookie | undefined
 
   if (draft) {
@@ -13,10 +13,10 @@ export const fetchPage = async (
     payloadToken = cookies().get('payload-token')
   }
 
-  const pageRes: {
-    docs: Page[]
+  const placeRes: {
+    docs: Place[]
   } = await fetch(
-    `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/pages?where[slug][equals]=${slug}${
+    `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/places?where[slug][equals]=${slug}${
       draft && payloadToken ? '&draft=true' : ''
     }`,
     {
@@ -24,7 +24,7 @@ export const fetchPage = async (
       // this is the key we'll use to on-demand revalidate pages that use this data
       // we do this by calling `revalidateTag()` using the same key
       // see `app/api/revalidate.ts` for more info
-      next: { tags: [`pages_${slug}`] },
+      next: { tags: [`places_${slug}`] },
       ...(draft && payloadToken
         ? {
             headers: {
@@ -35,5 +35,5 @@ export const fetchPage = async (
     },
   ).then(res => res.json())
 
-  return pageRes?.docs?.[0] ?? null
+  return placeRes?.docs?.[0] ?? null
 }

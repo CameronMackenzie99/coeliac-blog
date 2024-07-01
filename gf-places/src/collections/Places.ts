@@ -5,9 +5,19 @@ const Places: CollectionConfig = {
   versions: {
     drafts: true,
   },
+  access: {
+    read: ({ req: { user } }) => {
+      return true;
+    },
+  },
   fields: [
     {
       name: 'name',
+      type: 'text',
+    },
+    {
+      name: 'slug',
+      label: 'Slug',
       type: 'text',
     },
     {

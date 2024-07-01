@@ -10,7 +10,7 @@ export function AdminBar() {
     <AdminBarClient
       preview={isPreviewMode}
       // id={page?.id} // TODO: is there any way to do this?!
-      collection="pages"
+      collection="places"
     />
   )
 }

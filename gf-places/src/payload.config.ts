@@ -8,13 +8,14 @@ import Users from './collections/Users';
 import Places from './collections/Places';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import { viteBundler } from '@payloadcms/bundler-vite';
+import { slateEditor } from '@payloadcms/richtext-slate';
 
 export default buildConfig({
   admin: {
     user: Users.slug,
     bundler: viteBundler(),
   },
-  editor: lexicalEditor({}),
+  editor: slateEditor({}),
   collections: [Users, Places],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
@@ -23,6 +24,14 @@ export default buildConfig({
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
   plugins: [payloadCloud()],
+  cors: [
+    process.env.PAYLOAD_PUBLIC_SERVER_URL || '',
+    process.env.PAYLOAD_PUBLIC_SITE_URL || '',
+  ].filter(Boolean),
+  csrf: [
+    process.env.PAYLOAD_PUBLIC_SERVER_URL || '',
+    process.env.PAYLOAD_PUBLIC_SITE_URL || '',
+  ].filter(Boolean),
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI,
