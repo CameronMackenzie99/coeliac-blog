@@ -153,6 +153,7 @@ export function Serialize({ nodes }: Props): JSX.Element {
               const rel = ''
               return (
                 <a
+                  className="underline"
                   key={index}
                   href={attributes.url}
                   target={attributes.newTab ? 'target="_blank"' : undefined}

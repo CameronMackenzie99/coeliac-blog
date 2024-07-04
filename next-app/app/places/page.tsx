@@ -11,8 +11,6 @@ export default async function Page() {
     return notFound()
   }
 
-  console.log(places)
-
   return (
     <>
       <h1>Places to eat</h1>

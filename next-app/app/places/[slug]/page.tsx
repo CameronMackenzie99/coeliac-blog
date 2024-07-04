@@ -11,10 +11,16 @@ interface PageParams {
   params: { slug: string }
 }
 
-export const PageTemplate: React.FC<{ place: Place | null | undefined }> = ({ place: place }) => (
+export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = ({ place: place }) => (
   <main>
     <Gutter>
       <h1>{place?.name}</h1>
+      <section className="border-b">
+        <p>Address: {place?.address}</p>
+        <p>Fully GF?: {place?.fullyGf ? 'Yes' : 'No'}</p>
+        <p>Location: {place?.location}</p>
+        <p>Last Visited: {new Date(place?.lastDateOfVisit!).toLocaleDateString()}</p>
+      </section>
       <RichText content={place?.content} />
     </Gutter>
   </main>
@@ -29,7 +35,7 @@ export default async function Page({ params: { slug = 'home' } }: PageParams) {
     return notFound()
   }
 
-  return <PageTemplate place={page} />
+  return <PlaceTemplate place={page} />
 }
 
 export async function generateStaticParams() {

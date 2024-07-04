@@ -72,14 +72,26 @@ const serialize = (children: Children): React.ReactNode[] =>
       case 'blockquote':
         return <blockquote key={i}>{serialize(node.children)}</blockquote>
       case 'ul':
-        return <ul key={i}>{serialize(node.children)}</ul>
+        return (
+          <ul key={i} className="list-inside list-disc">
+            {serialize(node.children)}
+          </ul>
+        )
       case 'ol':
-        return <ol key={i}>{serialize(node.children)}</ol>
+        return (
+          <ol key={i} className="list-inside list-disc">
+            {serialize(node.children)}
+          </ol>
+        )
       case 'li':
-        return <li key={i}>{serialize(node.children)}</li>
+        return (
+          <li key={i} className="">
+            {serialize(node.children)}
+          </li>
+        )
       case 'link':
         return (
-          <a href={escapeHTML(node.url)} key={i}>
+          <a className="underline" href={escapeHTML(node.url)} key={i}>
             {serialize(node.children)}
           </a>
         )
