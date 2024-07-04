@@ -22,7 +22,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       </head>
       <body className="prose-sm font-serif">
         <AdminBar />
-        <section className="mx-32 flex flex-col gap-4 h-dvh">
+        <section className="mx-8 sm:mx-32 flex flex-col h-dvh">
           <Header />
           {children}
         </section>
