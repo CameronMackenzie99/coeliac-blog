@@ -39,6 +39,7 @@ export async function Header() {
             <Image width={100} height={100} alt="Logo" src="/duck.svg" />
           </picture>
         </Link>
+        <h1>Coeliac Ducky</h1>
         {hasMenuItems && (
           <nav className={classes.nav}>
             {menuItems.map((item, i) => {
