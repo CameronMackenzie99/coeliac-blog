@@ -2,45 +2,50 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-// import { MainMenu } from '../../../payload-types'
 import { CMSLink } from '../CMSLink'
 import { Gutter } from '../Gutter'
 
 import classes from './index.module.scss'
+import { Url } from 'url'
+
+type MenuItem = {
+  name: string
+  link: string
+}
+
+const menuItems: MenuItem[] = [
+  {
+    name: 'About me',
+    link: '/about-me',
+  },
+  {
+    name: 'Places to eat',
+    link: '/places',
+  },
+]
 
 export async function Header() {
-  // const mainMenu: MainMenu = await fetch(
-  //   `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/globals/main-menu`,
-  // ).then(res => res.json())
-
-  // const { navItems } = mainMenu
-
-  // const hasNavItems = navItems && Array.isArray(navItems) && navItems.length > 0
+  const hasMenuItems = menuItems.length > 0
 
   return (
     <header className={classes.header}>
       <Gutter className={classes.wrap}>
         <Link href="/" className={classes.logo}>
           <picture>
-            <source
+            {/* <source
               srcSet="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
               media="(prefers-color-scheme: dark)"
-            />
-            <Image
-              width={150}
-              height={30}
-              alt="Payload Logo"
-              src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-dark.svg"
-            />
+            /> */}
+            <Image width={100} height={100} alt="Logo" src="/duck.svg" />
           </picture>
         </Link>
-        {/* {hasNavItems && (
+        {hasMenuItems && (
           <nav className={classes.nav}>
-            {navItems.map(({ link }, i) => {
-              return <CMSLink key={i} {...link} />
+            {menuItems.map((item, i) => {
+              return <CMSLink key={i} appearance="default" label={item.name} url={item.link} />
             })}
           </nav>
-        )} */}
+        )}
       </Gutter>
     </header>
   )

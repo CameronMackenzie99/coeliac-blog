@@ -23,7 +23,6 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         Update: this is fixed in `@types/react` v18.2.14 but still requires `@ts-expect-error` to build :shrug:
         See my comment here: https://github.com/vercel/next.js/issues/42292#issuecomment-1622979777
         */}
-        {/* @ts-expect-error */}
         <Header />
         {children}
       </body>
