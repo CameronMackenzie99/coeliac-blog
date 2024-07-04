@@ -1,3 +1,3 @@
-import Page from './places/[slug]/page'
-
-export default Page
+export default async function Page() {
+  return <div>this is the home page</div>
+}

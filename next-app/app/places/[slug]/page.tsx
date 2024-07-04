@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 
 import { Place } from '../../../payload-types'
 import { fetchPlace } from '../../_api/fetchPage'
-import { fetchPages } from '../../_api/fetchPages'
+import { fetchPlaces } from '../../_api/fetchPages'
 import { Gutter } from '../../_components/Gutter'
 import RichText from '../../_components/RichText'
 
@@ -35,7 +35,7 @@ export default async function Page({ params: { slug = 'home' } }: PageParams) {
 }
 
 export async function generateStaticParams() {
-  const pages = await fetchPages()
+  const pages = await fetchPlaces()
 
   return pages.map(({ slug }) =>
     slug !== 'home'
