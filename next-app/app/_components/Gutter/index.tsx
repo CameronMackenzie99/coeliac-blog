@@ -1,7 +1,5 @@
 import React, { forwardRef, Ref } from 'react'
 
-import classes from './index.module.scss'
-
 type Props = {
   left?: boolean
   right?: boolean
@@ -16,14 +14,14 @@ export const Gutter: React.FC<Props> = forwardRef<HTMLDivElement, Props>((props,
   return (
     <div
       ref={ref}
-      className={[
-        classes.gutter,
-        left && classes.gutterLeft,
-        right && classes.gutterRight,
-        className,
-      ]
-        .filter(Boolean)
-        .join(' ')}
+      // className={[
+      //   classes.gutter,
+      //   left && classes.gutterLeft,
+      //   right && classes.gutterRight,
+      //   className,
+      // ]
+      //   .filter(Boolean)
+      //   .join(' ')}
     >
       {children}
     </div>

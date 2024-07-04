@@ -1,8 +1,6 @@
 import React, { ElementType } from 'react'
 import Link from 'next/link'
 
-import classes from './index.module.scss'
-
 export type Props = {
   label?: string
   appearance?: 'default' | 'primary' | 'secondary'
@@ -28,19 +26,11 @@ export const Button: React.FC<Props> = ({
 }) => {
   let el = elFromProps
   const newTabProps = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {}
-  const className = [
-    classes.button,
-    classNameFromProps,
-    classes[`appearance--${appearance}`],
-    classes.button,
-  ]
-    .filter(Boolean)
-    .join(' ')
 
   const content = (
-    <div className={classes.content}>
+    <div>
       {/* <Chevron /> */}
-      <span className={classes.label}>{label}</span>
+      <span>{label}</span>
     </div>
   )
 
@@ -48,7 +38,7 @@ export const Button: React.FC<Props> = ({
 
   if (el === 'link') {
     return (
-      <Link href={href || ''} className={className} {...newTabProps} onClick={onClick}>
+      <Link href={href || ''} {...newTabProps} onClick={onClick}>
         {content}
       </Link>
     )
@@ -59,7 +49,7 @@ export const Button: React.FC<Props> = ({
   return (
     <Element
       href={href}
-      className={className}
+      // className={className}
       type={type}
       {...newTabProps}
       onClick={onClick}

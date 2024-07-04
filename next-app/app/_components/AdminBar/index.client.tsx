@@ -5,16 +5,14 @@ import { PayloadAdminBar, PayloadAdminBarProps, PayloadMeUser } from 'payload-ad
 
 import { Gutter } from '../Gutter'
 
-import classes from './index.module.scss'
-
 const Title: React.FC = () => <span>Dashboard</span>
 
 export const AdminBarClient: React.FC<PayloadAdminBarProps> = props => {
   const [user, setUser] = useState<PayloadMeUser>()
 
   return (
-    <div className={[classes.adminBar, user && classes.show].filter(Boolean).join(' ')}>
-      <Gutter className={classes.container}>
+    <div>
+      <Gutter>
         <PayloadAdminBar
           {...props}
           logo={<Title />}
@@ -24,12 +22,12 @@ export const AdminBarClient: React.FC<PayloadAdminBarProps> = props => {
             window.location.reload()
           }}
           onAuthChange={setUser}
-          className={classes.payloadAdminBar}
-          classNames={{
-            user: classes.user,
-            logo: classes.logo,
-            controls: classes.controls,
-          }}
+          // className={}
+          // classNames={{
+          //   user: classes.user,
+          //   logo: classes.logo,
+          //   controls: classes.controls,
+          // }}
           style={{
             position: 'relative',
             zIndex: 'unset',

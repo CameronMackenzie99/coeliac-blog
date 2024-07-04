@@ -1,7 +1,6 @@
 import { AdminBar } from './_components/AdminBar'
 import { Header } from './_components/Header'
-
-import './app.scss'
+import './globals.css'
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,8 +14,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
     <html lang="en">
       <body>
         <AdminBar />
-        <Header />
-        {children}
+        <section className="mx-8 flex flex-col gap-4 h-dvh">
+          <Header />
+          {children}
+        </section>
       </body>
     </html>
   )

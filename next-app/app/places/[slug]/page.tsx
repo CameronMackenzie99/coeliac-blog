@@ -7,14 +7,12 @@ import { fetchPlaces } from '../../_api/fetchPages'
 import { Gutter } from '../../_components/Gutter'
 import RichText from '../../_components/RichText'
 
-import classes from './index.module.scss'
-
 interface PageParams {
   params: { slug: string }
 }
 
 export const PageTemplate: React.FC<{ place: Place | null | undefined }> = ({ place: place }) => (
-  <main className={classes.page}>
+  <main>
     <Gutter>
       <h1>{place?.name}</h1>
       <RichText content={place?.content} />
