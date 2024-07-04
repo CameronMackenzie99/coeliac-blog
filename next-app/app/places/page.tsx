@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { fetchPlaces } from '../_api/fetchPages'
 import Link from 'next/link'
+import { Button } from '../_components/Button'
 
 export default async function Page() {
   // const page = await fetchPlace(slug, isDraftMode)
@@ -16,10 +17,15 @@ export default async function Page() {
     <>
       <h1>Places to eat!!</h1>
       {places.map((place, i) => (
-        <Link key={i} href={`places/${place.slug}`}>
-          <h3 key={i}>{place.name}</h3>
+        <>
+          <Button
+            appearance="primary"
+            key={i}
+            href={`places/${place.slug}`}
+            label={place.name ?? 'oops'}
+          />
           <div key={i}>{place.tags}</div>
-        </Link>
+        </>
       ))}
     </>
   )

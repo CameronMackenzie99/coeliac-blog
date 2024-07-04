@@ -36,7 +36,7 @@ export async function Header() {
               srcSet="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
               media="(prefers-color-scheme: dark)"
             /> */}
-            <Image width={100} height={100} alt="Logo" src="/duck.svg" />
+            <Image width={70} height={70} alt="Logo" src="/duck.svg" />
           </picture>
         </Link>
         <h1>Coeliac Ducky</h1>
