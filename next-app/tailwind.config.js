@@ -9,6 +9,9 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      sanchez: ['Sanchez', 'serif'],
+    },
     extend: {},
   },
   plugins: [require('@tailwindcss/typography')],

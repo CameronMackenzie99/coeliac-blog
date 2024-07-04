@@ -26,20 +26,18 @@ export async function Header() {
 
   return (
     <header>
-      <Gutter>
-        <nav className="flex flex-row justify-between font-bold">
-          <Link href="/">
-            <h1>Coeliac Ducky</h1>
-          </Link>
-          {hasMenuItems && (
-            <>
-              {menuItems.map((item, i) => {
-                return <CMSLink key={i} appearance="default" label={item.name} url={item.link} />
-              })}
-            </>
-          )}
-        </nav>
-      </Gutter>
+      <nav className="flex flex-row justify-between items-baseline font-bold border-b">
+        <Link href="/">
+          <h2>Coeliac Ducky</h2>
+        </Link>
+        {hasMenuItems && (
+          <>
+            {menuItems.map((item, i) => {
+              return <CMSLink key={i} appearance="default" label={item.name} url={item.link} />
+            })}
+          </>
+        )}
+      </nav>
     </header>
   )
 }
