@@ -1,3 +1,3 @@
-import Page from './[slug]/page'
+import Page from './places/[slug]/page'
 
 export default Page

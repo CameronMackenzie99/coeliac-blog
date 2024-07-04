@@ -1,11 +1,11 @@
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-import { Place } from '../../payload-types'
-import { fetchPlace } from '../_api/fetchPage'
-import { fetchPages } from '../_api/fetchPages'
-import { Gutter } from '../_components/Gutter'
-import RichText from '../_components/RichText'
+import { Place } from '../../../payload-types'
+import { fetchPlace } from '../../_api/fetchPage'
+import { fetchPages } from '../../_api/fetchPages'
+import { Gutter } from '../../_components/Gutter'
+import RichText from '../../_components/RichText'
 
 import classes from './index.module.scss'
 
