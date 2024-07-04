@@ -20,12 +20,14 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body className="prose prose-slate prose-sm font-serif">
+      <body>
         <AdminBar />
-        <section className="mx-8 sm:mx-32 flex flex-col h-dvh">
-          <Header />
-          {children}
-        </section>
+        <div className="mx-8 sm:mx-32 prose prose-slate prose-sm font-serif">
+          <section className="h-dvh">
+            <Header />
+            {children}
+          </section>
+        </div>
       </body>
     </html>
   )
