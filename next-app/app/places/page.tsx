@@ -15,7 +15,7 @@ export default async function Page() {
 
   return (
     <>
-      <h1>Places to eat!!</h1>
+      <h1>Places to eat</h1>
       {places.map((place, i) => (
         <>
           <Button

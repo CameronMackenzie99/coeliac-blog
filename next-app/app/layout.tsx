@@ -12,7 +12,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
-      <body>
+      <body className="prose-sm font-serif">
         <AdminBar />
         <section className="mx-8 flex flex-col gap-4 h-dvh">
           <Header />
