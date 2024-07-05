@@ -12,7 +12,19 @@ module.exports = {
     fontFamily: {
       serif: ['Sanchez', 'serif'],
     },
-    extend: {},
+    extend: {
+      typography: {
+        sm: {
+          css: [
+            {
+              a: {
+                textDecoration: 'none',
+              },
+            },
+          ],
+        },
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 }
