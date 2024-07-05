@@ -16,7 +16,7 @@ export default async function Page() {
     <>
       <h1>Places to eat</h1>
       {places.map((place, i) => (
-        <div key={i} className="py-4 w-2/3 hover:bg-slate-50 border-b">
+        <div key={i} className="py-4 hover:bg-slate-50 border-b">
           <Link href={`places/${place.slug}`}>
             <h2>{place.name}</h2>
             <div className="flex gap-2">

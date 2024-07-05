@@ -17,7 +17,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       </head>
       <body>
         <AdminBar />
-        <div className="mx-8 sm:mx-32 prose prose-slate prose-sm font-serif">
+        <div className="prose prose-slate prose-sm font-serif">
           <section className="h-dvh">
             <Header />
             {children}
