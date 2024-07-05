@@ -22,17 +22,11 @@ export const AdminBarClient: React.FC<PayloadAdminBarProps> = props => {
             window.location.reload()
           }}
           onAuthChange={setUser}
-          // className={}
-          // classNames={{
-          //   user: classes.user,
-          //   logo: classes.logo,
-          //   controls: classes.controls,
-          // }}
           style={{
             position: 'relative',
             zIndex: 'unset',
             padding: 0,
-            backgroundColor: 'transparent',
+            backgroundColor: 'gray',
           }}
         />
       </Gutter>

@@ -21,7 +21,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body>
+      <body className="bg-slate-50">
         <AdminBar />
         <div className="mx-8 sm:mx-32 prose prose-slate prose-sm font-serif">
           <section className="min-h-dvh">

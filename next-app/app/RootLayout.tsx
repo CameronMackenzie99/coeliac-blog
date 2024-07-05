@@ -1,4 +1,5 @@
 import { AdminBar } from './_components/AdminBar'
+import Footer from './_components/Footer'
 import { Header } from './_components/Header'
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

@@ -6,6 +6,7 @@ import { fetchPlace } from '../../_api/fetchPage'
 import { fetchPlaces } from '../../_api/fetchPages'
 import { Gutter } from '../../_components/Gutter'
 import RichText from '../../_components/RichText'
+import { formatDate } from '../../_utils/utils'
 
 interface PageParams {
   params: { slug: string }
@@ -19,7 +20,7 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = ({ p
         <p>Address: {place?.address}</p>
         <p>Fully GF?: {place?.fullyGf ? 'Yes' : 'No'}</p>
         <p>Location: {place?.location}</p>
-        <p>Last Visited: {new Date(place?.lastDateOfVisit!).toLocaleDateString()}</p>
+        <p>Last Visited: {formatDate(place?.lastDateOfVisit)}</p>
       </section>
       <RichText content={place?.content} />
     </Gutter>

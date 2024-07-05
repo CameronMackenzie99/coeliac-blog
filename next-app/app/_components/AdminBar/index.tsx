@@ -9,6 +9,7 @@ export function AdminBar() {
   return (
     <AdminBarClient
       preview={isPreviewMode}
+      // className="text-black"
       // id={page?.id} // TODO: is there any way to do this?!
       collection="places"
     />
