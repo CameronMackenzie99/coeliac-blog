@@ -17,7 +17,8 @@ export default async function Page() {
     <>
       <h1>Places to eat</h1>
       {places.map((place, i) => (
-        <div key={i} className="py-4 hover:bg-slate-100 border-b">
+        <div key={i} className="py-4 hover:bg-slate-100 border-b drop-shadow-sm">
+          {/* tailwind extended shadows plugin */}
           <Link href={`places/${place.slug}`}>
             <h2>{place.name}</h2>
             <p className="text-xs italic">{formatDate(place.createdAt)}</p>

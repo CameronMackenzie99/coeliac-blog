@@ -10,7 +10,7 @@ export const Footer = () => {
       <section className="flex w-full items-center">
         <p className="basis-1/3 text-xs text-slate-400">
           Website by <br />{' '}
-          <a className="text-slate-500" href="cameronmackenzie.dev">
+          <a className="text-slate-500" href="https://www.cameronmackenzie.dev" target="_blank">
             Cameron Mackenzie
           </a>
         </p>
