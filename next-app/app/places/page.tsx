@@ -5,7 +5,7 @@ import { Tag } from '../_components/Tag/Tag'
 import { formatDate } from '../_utils/utils'
 import Image from 'next/image'
 import { Search } from '../_components/Search/search'
-import { LinkCard } from '../_components/Card/LinkCard'
+import { Card } from '../_components/Card/LinkCard'
 
 export type PageParams = {
   searchParams: {
@@ -29,7 +29,7 @@ export default async function Page({ searchParams }: PageParams) {
         <p>Here's a list of all the coeliac friendly places that I've found and would recommend!</p>
         <Search places={places} />
         {filteredPlaces.map((place, i) => (
-          <LinkCard key={i} href={`places/${place.slug}`} shadowColour="yellow">
+          <Card key={i} href={`places/${place.slug}`} shadowColour="yellow">
             <div className="flex justify-between">
               <div className="max-w-64">
                 <h2>{place.name}</h2>
@@ -55,7 +55,7 @@ export default async function Page({ searchParams }: PageParams) {
                 />
               </div>
             </div>
-          </LinkCard>
+          </Card>
         ))}
       </article>
     </>

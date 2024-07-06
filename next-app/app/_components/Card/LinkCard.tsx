@@ -1,9 +1,8 @@
 import clsx from 'clsx'
 import Link from 'next/link'
-import { TagColours } from '../../_utils/utils'
 
-type LinkCardProps = {
-  href: string
+type CardProps = {
+  href?: string
   shadowColour: keyof typeof shadowColours
   children: React.ReactNode
 }
@@ -20,18 +19,23 @@ const shadowHoverColours = {
   green: `hover:shadow-[5px_5px_0_0_rgba(187,247,208,1)]`,
 } as const
 
-export function LinkCard({ href, shadowColour, children }: LinkCardProps): React.ReactElement {
+export function Card({ href, shadowColour, children }: CardProps): React.ReactElement {
   return (
     <div
       className={clsx(
-        'border hover:border-2 border-slate-600 hover:bg-slate-100 hover:cursor-pointer',
+        'border  border-slate-600 rounded-sm',
         shadowColours[shadowColour],
         shadowHoverColours[shadowColour],
+        href ? 'hover:border-2 hover:bg-slate-100 hover:cursor-pointer' : '',
       )}
     >
-      <Link href={href}>
+      {href ? (
+        <Link href={href}>
+          <div className="p-4">{children}</div>
+        </Link>
+      ) : (
         <div className="p-4">{children}</div>
-      </Link>
+      )}
     </div>
   )
 }
