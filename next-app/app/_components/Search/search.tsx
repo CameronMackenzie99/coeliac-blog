@@ -23,8 +23,7 @@ export function Search({ places }: { places: Place[] }) {
 
   const locations = Array.from(new Set(places.map(place => place.location)))
 
-  const searchLocation = (value: string | undefined): void => {
-    if (!value) return
+  const searchLocation = (value: string): void => {
     const query = createQueryString('location', value)
     router.push(pathname + '?' + query)
   }
@@ -36,10 +35,10 @@ export function Search({ places }: { places: Place[] }) {
       <select
         name="locations"
         id="locations"
-        defaultValue={undefined}
+        defaultValue={searchParams.get('location')?.toString()}
         onChange={$event => searchLocation($event.target.value)}
       >
-        <option value={undefined}></option>
+        <option value=""></option>
         {locations.map((location, i) => {
           return (
             <option key={i} value={location!}>

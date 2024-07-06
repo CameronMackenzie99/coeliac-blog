@@ -6,10 +6,20 @@ import { formatDate } from '../_utils/utils'
 import Image from 'next/image'
 import { Search } from '../_components/Search/search'
 
-export default async function Page() {
-  const places = await fetchPlaces()
+export type PageParams = {
+  params: {
+    locations: string[]
+  }
+  searchParams: {
+    location?: string
+  }
+}
 
-  if (places === null || places.length === 0) {
+export default async function Page({ searchParams }: PageParams) {
+  const places = await fetchPlaces()
+  const filteredPlaces = await fetchPlaces(searchParams)
+
+  if (filteredPlaces === null || filteredPlaces.length === 0) {
     return notFound()
   }
 
@@ -17,7 +27,7 @@ export default async function Page() {
     <>
       <h1>Places to eat</h1>
       <Search places={places} />
-      {places.map((place, i) => (
+      {filteredPlaces.map((place, i) => (
         <div
           key={i}
           className="border-2 hover:bg-slate-100 hover:cursor-pointer shadow-[5px_5px_0_0_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,0.2)]"
