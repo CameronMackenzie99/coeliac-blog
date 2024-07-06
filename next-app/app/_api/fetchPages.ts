@@ -1,4 +1,4 @@
-import type { Place } from '../../payload-types'
+import type { Place } from '../../../payload-types'
 import { PageParams } from '../places/page'
 
 export const fetchPlaces = async (searchParams?: PageParams['searchParams']): Promise<Place[]> => {

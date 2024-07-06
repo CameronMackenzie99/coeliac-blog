@@ -36,6 +36,7 @@ const Places: CollectionConfig = {
       name: 'fullyGf',
       type: 'checkbox',
     },
+    { name: 'rating', type: 'radio', options: ['1', '2', '3', '4', '5'] },
     {
       name: 'lastDateOfVisit',
       type: 'date',
@@ -44,6 +45,7 @@ const Places: CollectionConfig = {
       name: 'tags',
       type: 'text',
     },
+    { name: 'summary', type: 'textarea' },
     {
       name: 'content',
       type: 'richText',

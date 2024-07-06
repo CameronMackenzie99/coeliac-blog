@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { ChangeEvent, useCallback } from 'react'
-import { Place } from '../../../payload-types'
+import { Place } from '../../../../payload-types'
 
 export function Search({ places }: { places: Place[] }) {
   const router = useRouter()

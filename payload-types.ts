@@ -44,8 +44,10 @@ export interface Place {
   website?: string | null;
   location?: string | null;
   fullyGf?: boolean | null;
+  rating?: ('1' | '2' | '3' | '4' | '5') | null;
   lastDateOfVisit?: string | null;
   tags?: string | null;
+  summary?: string | null;
   content?:
     | {
         [k: string]: unknown;

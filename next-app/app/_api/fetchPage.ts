@@ -1,6 +1,6 @@
 import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
 
-import type { Place } from '../../payload-types'
+import type { Place } from '../../../payload-types'
 
 export const fetchPlace = async (
   slug: string,
