@@ -7,11 +7,9 @@ import Image from 'next/image'
 import { Search } from '../_components/Search/search'
 
 export type PageParams = {
-  params: {
-    locations: string[]
-  }
   searchParams: {
     location?: string
+    tag?: string
   }
 }
 
@@ -24,8 +22,9 @@ export default async function Page({ searchParams }: PageParams) {
   }
 
   return (
-    <>
+    <article className="flex flex-col gap-4">
       <h1>Places to eat</h1>
+      <p>Here's a list of all the coeliac friendly places that I've found and would recommend!</p>
       <Search places={places} />
       {filteredPlaces.map((place, i) => (
         <div
@@ -61,6 +60,6 @@ export default async function Page({ searchParams }: PageParams) {
           </Link>
         </div>
       ))}
-    </>
+    </article>
   )
 }

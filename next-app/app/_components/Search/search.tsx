@@ -22,31 +22,57 @@ export function Search({ places }: { places: Place[] }) {
   )
 
   const locations = Array.from(new Set(places.map(place => place.location)))
+  const tags = Array.from(new Set(places.map(place => place.tags?.split(', ')).flat()))
 
-  const searchLocation = (value: string): void => {
-    const query = createQueryString('location', value)
+  const search = (name: string, value: string): void => {
+    const query = createQueryString(name, value)
     router.push(pathname + '?' + query)
   }
 
   return (
-    <section className="flex flex-col w-fit">
-      <label htmlFor="locations" />
-      Find somewhere in...
-      <select
-        name="locations"
-        id="locations"
-        defaultValue={searchParams.get('location')?.toString()}
-        onChange={$event => searchLocation($event.target.value)}
-      >
-        <option value=""></option>
-        {locations.map((location, i) => {
-          return (
-            <option key={i} value={location!}>
-              {location}
-            </option>
-          )
-        })}
-      </select>
-    </section>
+    <div className="flex flex-wrap justify-between gap-2 pr-8">
+      <section className="flex flex-col w-fit">
+        <label className="mb-2" htmlFor="location">
+          <b className="text-xl">Find somewhere in...</b>
+        </label>
+        <select
+          name="locations"
+          id="locations"
+          className="bg-slate-100 border px-2 rounded-md"
+          defaultValue={searchParams.get('location')?.toString() ?? ''}
+          onChange={$event => search('location', $event.target.value)}
+        >
+          <option value="">Select location</option>
+          {locations.map((location, i) => {
+            return (
+              <option key={i} value={location!}>
+                {location}
+              </option>
+            )
+          })}
+        </select>
+      </section>
+      <section className="flex flex-col w-fit">
+        <label className="mb-2" htmlFor="tags">
+          <b className="text-xl">What do you fancy?</b>
+        </label>
+        <select
+          name="tags"
+          id="tags"
+          className="bg-slate-100 border px-2 rounded-md"
+          defaultValue={searchParams.get('tag')?.toString() ?? ''}
+          onChange={$event => search('tag', $event.target.value)}
+        >
+          <option value="">Select tag</option>
+          {tags.map((tag, i) => {
+            return (
+              <option key={i} value={tag!}>
+                {tag}
+              </option>
+            )
+          })}
+        </select>
+      </section>
+    </div>
   )
 }

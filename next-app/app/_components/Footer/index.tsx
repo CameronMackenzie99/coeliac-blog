@@ -6,7 +6,7 @@ import InstaLogo from '../Logos/Insta'
 
 export const Footer = () => {
   return (
-    <footer className="border-t sticky top-[100vh]">
+    <footer className="border-t mt-4 sticky top-[100vh]">
       <section className="flex w-full items-center">
         <p className="basis-1/3 text-xs text-slate-400">
           Website by <br />{' '}
