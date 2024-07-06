@@ -42,7 +42,7 @@ export function Search({ places }: { places: Place[] }) {
           defaultValue={searchParams.get('location')?.toString() ?? ''}
           onChange={$event => search('location', $event.target.value)}
         >
-          <option value="">Select location</option>
+          <option value="">All locations</option>
           {locations.map((location, i) => {
             return (
               <option key={i} value={location!}>
@@ -63,7 +63,7 @@ export function Search({ places }: { places: Place[] }) {
           defaultValue={searchParams.get('tag')?.toString() ?? ''}
           onChange={$event => search('tag', $event.target.value)}
         >
-          <option value="">Select tag</option>
+          <option value="">Anything</option>
           {tags.map((tag, i) => {
             return (
               <option key={i} value={tag!}>
