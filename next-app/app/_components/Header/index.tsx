@@ -40,7 +40,9 @@ export async function Header() {
     <header>
       <nav className="flex flex-row flex-wrap py-4 gap-3 justify-between items-baseline font-bold border-b border-slate-600 mb-4 w-full">
         <Link href="/">
-          <h2 className="font-medium not-prose text-3xl">Coeliac Ducky</h2>
+          <h2 className="font-medium not-prose text-3xl hover:cursor-pointer hover:underline border-slate-600">
+            Coeliac Ducky
+          </h2>
         </Link>
         {hasMenuItems && (
           <>
@@ -49,7 +51,7 @@ export async function Header() {
                 <Link
                   key={i}
                   href={item.link}
-                  className="hover:underline  px-1 border border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)] hover:shadow-[5px_5px_0_0_rgba(252,211,77,1)] text-nowrap"
+                  className="hover:underline px-1 border border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)] hover:shadow-[5px_5px_0_0_rgba(252,211,77,1)] text-nowrap"
                 >
                   {item.name}
                 </Link>
