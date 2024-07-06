@@ -1,21 +1,34 @@
+import Image from 'next/image'
+
 export default async function Page() {
   return (
     <>
       <h1>Hello, I’m Holly, and welcome to my website!</h1>
-      <section>
+      <article>
         <h2>About me</h2>{' '}
-        <p>
-          I’m 25, and currently living in London. I grew up in Derbyshire (hence the Ducky), and
-          then Norwich, which still has my heart.
-        </p>{' '}
-        <p>
-          I was diagnosed with coeliac disease in April 2021. I had struggled with a range of
-          seemingly unconnected symptoms for many years, but my symptoms escalated during the
-          pandemic (I partly put this down to the fact that we jumped on the pandemic craft-beer and
-          sourdough bandwagons, and that was just too much gluten for my body to handle). I got back
-          in touch with my GP who referred me for tests, and I found out a few days later that I
-          have coeliac disease.
-        </p>{' '}
+        <section className="flex gap-6">
+          <div>
+            <p>
+              I’m 25, and currently living in London. I grew up in Derbyshire (hence the Ducky), and
+              then Norwich, which still has my heart.
+            </p>{' '}
+            <p>
+              I was diagnosed with coeliac disease in April 2021. I had struggled with a range of
+              seemingly unconnected symptoms for many years, but my symptoms escalated during the
+              pandemic (I partly put this down to the fact that we jumped on the pandemic craft-beer
+              and sourdough bandwagons, and that was just too much gluten for my body to handle). I
+              got back in touch with my GP who referred me for tests, and I found out a few days
+              later that I have coeliac disease.
+            </p>{' '}
+          </div>
+          <Image
+            src="/holly.jpg"
+            alt="picture of holly drinking with a cocktail"
+            className="object-cover border border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)]"
+            width={200}
+            height={200}
+          />
+        </section>
         <p>
           I am really grateful to have been diagnosed and to have an answer to what was wrong. But,
           I did initially feel very daunted by the idea of being 100% gluten-free forever (I still
@@ -32,7 +45,7 @@ export default async function Page() {
           I get to be a part of as a result of my diagnosis! So, I wanted to create my own website
           and blog, to hopefully contribute to this lovely community.
         </p>
-      </section>{' '}
+      </article>{' '}
       <section>
         <h2>About this website</h2>{' '}
         <p>
