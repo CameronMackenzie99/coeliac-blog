@@ -38,7 +38,7 @@ export function Search({ places }: { places: Place[] }) {
         <select
           name="locations"
           id="locations"
-          className="bg-slate-100 border px-2 rounded-md"
+          className="bg-slate-100 border border-slate-600 px-2 rounded-md"
           defaultValue={searchParams.get('location')?.toString() ?? ''}
           onChange={$event => search('location', $event.target.value)}
         >
@@ -59,7 +59,7 @@ export function Search({ places }: { places: Place[] }) {
         <select
           name="tags"
           id="tags"
-          className="bg-slate-100 border px-2 rounded-md"
+          className="bg-slate-100 border border-slate-600 px-2 rounded-md"
           defaultValue={searchParams.get('tag')?.toString() ?? ''}
           onChange={$event => search('tag', $event.target.value)}
         >

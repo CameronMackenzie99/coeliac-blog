@@ -26,7 +26,7 @@ export async function Header() {
 
   return (
     <header>
-      <nav className="flex flex-row justify-between items-baseline font-bold border-b mb-4 w-full">
+      <nav className="flex flex-row justify-between items-baseline font-bold border-b border-slate-600 mb-4 w-full">
         <Link href="/">
           <h2 className="font-medium">Coeliac Ducky</h2>
         </Link>

@@ -29,7 +29,7 @@ export default async function Page({ searchParams }: PageParams) {
       {filteredPlaces.map((place, i) => (
         <div
           key={i}
-          className="border-2 hover:bg-slate-100 hover:cursor-pointer shadow-[5px_5px_0_0_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,0.2)]"
+          className="border-2 border-slate-600 hover:bg-slate-100 hover:cursor-pointer shadow-[5px_5px_0_0_rgba(252,211,77,0.8)] hover:shadow-[8px_8px_0_0_rgba(252,211,77,1)]"
         >
           <Link href={`places/${place.slug}`}>
             <div className="flex p-4 justify-between">
