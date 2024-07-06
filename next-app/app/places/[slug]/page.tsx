@@ -39,7 +39,7 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = ({ p
             <b>Last Visited:</b> {formatDate(place?.lastDateOfVisit)}
           </p>
           <div className="flex gap-2">
-            {place?.tags?.split(',').map((tag, i) => (
+            {place?.tags?.split(', ').map((tag, i) => (
               <Tag key={i} tag={tag} />
             ))}
           </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { ChangeEvent, useCallback } from 'react'
+import { useCallback } from 'react'
 import { Place } from '../../../../payload-types'
 
 export function Search({ places }: { places: Place[] }) {

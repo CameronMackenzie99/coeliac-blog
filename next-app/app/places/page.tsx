@@ -40,7 +40,7 @@ export default async function Page({ searchParams }: PageParams) {
                   </p>
                 </div>
                 <div className="flex gap-2 flex-wrap">
-                  {place.tags?.split(',').map((tag, i) => {
+                  {place.tags?.split(', ').map((tag, i) => {
                     return <Tag key={i} tag={tag} />
                   })}
                 </div>
