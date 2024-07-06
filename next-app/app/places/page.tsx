@@ -17,15 +17,19 @@ export default async function Page() {
     <>
       <h1>Places to eat</h1>
       {places.map((place, i) => (
-        <div key={i} className="py-4 hover:bg-slate-100 border-b drop-shadow-sm">
-          {/* tailwind extended shadows plugin */}
+        <div
+          key={i}
+          className="border-2 hover:bg-slate-100 hover:cursor-pointer shadow-[5px_5px_0_0_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0_0_rgba(0,0,0,0.2)]"
+        >
           <Link href={`places/${place.slug}`}>
-            <h2>{place.name}</h2>
-            <p className="text-xs italic">{formatDate(place.createdAt)}</p>
-            <div className="flex gap-2">
-              {place.tags?.split(',').map((tag, i) => {
-                return <Tag key={i} tag={tag} />
-              })}
+            <div className="p-4">
+              <h2>{place.name}</h2>
+              <p className="text-xs italic">{formatDate(place.createdAt)}</p>
+              <div className="flex gap-2">
+                {place.tags?.split(',').map((tag, i) => {
+                  return <Tag key={i} tag={tag} />
+                })}
+              </div>
             </div>
           </Link>
         </div>
