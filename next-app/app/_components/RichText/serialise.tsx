@@ -16,13 +16,13 @@ import {
 import type { SerializedLexicalNode } from './types'
 
 interface Props {
-  nodes: SerializedLexicalNode[]
+  children: SerializedLexicalNode[]
 }
 
-export function Serialize({ nodes }: Props): JSX.Element {
+export function Serialize({ children }: Props): JSX.Element {
   return (
     <Fragment>
-      {nodes?.map((node, index): JSX.Element | null => {
+      {children?.map((node, index): JSX.Element | null => {
         if (node.type === 'text') {
           let text = (
             <span key={index} dangerouslySetInnerHTML={{ __html: escapeHTML(node.text) }} />
@@ -77,9 +77,9 @@ export function Serialize({ nodes }: Props): JSX.Element {
                   item.checked = false
                 }
               }
-              return Serialize({ nodes: node.children })
+              return Serialize({ children: node.children })
             } else {
-              return Serialize({ nodes: node.children })
+              return Serialize({ children: node.children })
             }
           }
         }

@@ -23,7 +23,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       </head>
       <body className="bg-slate-50">
         <AdminBar />
-        <div className="px-4 min-w-full prose prose-slate prose-sm font-serif">
+        <div className="px-4 min-w-full prose prose-slate prose-sm md:prose-lg font-serif">
           <section className="min-h-dvh">
             <Header />
             {children}

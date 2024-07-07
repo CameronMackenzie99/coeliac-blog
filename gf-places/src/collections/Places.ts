@@ -1,3 +1,7 @@
+import {
+  SlateToLexicalFeature,
+  lexicalEditor,
+} from '@payloadcms/richtext-lexical';
 import { CollectionConfig } from 'payload/types';
 
 const Places: CollectionConfig = {
@@ -10,6 +14,7 @@ const Places: CollectionConfig = {
       return true;
     },
   },
+  upload: true,
   fields: [
     {
       name: 'name',
@@ -49,6 +54,12 @@ const Places: CollectionConfig = {
     {
       name: 'content',
       type: 'richText',
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          SlateToLexicalFeature({}),
+        ],
+      }),
     },
   ],
 };
