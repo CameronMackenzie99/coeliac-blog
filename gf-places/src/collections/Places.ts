@@ -38,6 +38,11 @@ const Places: CollectionConfig = {
       type: 'text',
     },
     {
+      name: 'thumbnail',
+      type: 'upload',
+      relationTo: 'media',
+    },
+    {
       name: 'fullyGf',
       type: 'checkbox',
     },
