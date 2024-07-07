@@ -21,13 +21,14 @@ export default async function Page() {
               my body to handle!).
             </p>{' '}
           </div>
-          <Image
-            src="/holly.jpg"
-            alt="picture of holly drinking with a cocktail"
-            className="object-cover border mx-auto border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)]"
-            width={200}
-            height={200}
-          />
+          <div className="relative h-96 w-72">
+            <Image
+              src="/holly.jpg"
+              alt="picture of holly drinking with a cocktail"
+              className="object-contain border self-center border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)]"
+              fill
+            />
+          </div>
         </section>
         <p>
           I do feel very grateful to have been diagnosed, and to know what was wrong . But I did
