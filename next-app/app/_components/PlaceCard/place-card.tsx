@@ -30,8 +30,8 @@ export const PlaceCard = async ({ place }: PlaceCardProps): Promise<React.JSX.El
         <div>
           <div className="relative h-60 w-60 hidden md:flex">
             <Image
-              src={`http://localhost:3000${thumbnail.url}`}
-              alt={thumbnail.alt!}
+              src={`http://localhost:3000${thumbnail?.url ?? ''}`}
+              alt={thumbnail?.alt ?? ''}
               fill
               className="object-contain object-right self-center"
             />
