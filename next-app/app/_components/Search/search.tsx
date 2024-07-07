@@ -32,7 +32,7 @@ export function Search({ places }: { places: Place[] }) {
   return (
     <div className="flex flex-wrap justify-between gap-2 pr-8">
       <section className="flex flex-col w-fit">
-        <label className="mb-2" htmlFor="location">
+        <label className="mb-2" htmlFor="locations">
           <b className="text-xl">Find somewhere in...</b>
         </label>
         <select

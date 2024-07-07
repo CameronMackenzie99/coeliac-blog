@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@axe-core/playwright": "^4.9.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "clsx": "^2.1.1",
     "escape-html": "^1.0.3",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.8",
     "@payloadcms/eslint-config": "^0.0.2",
+    "@playwright/test": "^1.45.1",
     "@tailwindcss/typography": "^0.5.13",
     "@types/escape-html": "^1.0.2",
     "@types/node": "18.11.3",
