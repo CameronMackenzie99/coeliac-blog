@@ -14,12 +14,12 @@ export const PlaceCard = async ({ place }: PlaceCardProps): Promise<React.JSX.El
     typeof place?.thumbnail === 'number' ? await fetchMedia(place?.thumbnail) : place?.thumbnail
   return (
     <Card href={`places/${place.slug}`} shadowColour="yellow">
-      <div className="flex justify-between">
-        <div className="max-w-64">
-          <h2>{place.name}</h2>
+      <div className="flex justify-between p-4">
+        <div className="max-w-1/2">
           <div className="flex flex-col not-prose gap-2 pb-2">
-            <p className="text-xs">Location: {place.location}</p>
-            <p className="text-xs italic">Last visited: {formatDate(place.lastDateOfVisit)}</p>
+            <h2 className="text-4xl font-bold">{place.name}</h2>
+            <p className="text-md">Location: {place.location}</p>
+            <p className="text-md italic">Last visited: {formatDate(place.lastDateOfVisit)}</p>
           </div>
           <div className="flex gap-2 flex-wrap">
             {place.tags?.split(', ').map((tag, i) => {
