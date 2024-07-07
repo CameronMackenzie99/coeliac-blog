@@ -53,9 +53,9 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
             </div>
           </div>
           {thumbnail?.url && (
-            <div className="relative h-60 w-1/2 hidden sm:flex">
+            <div className="relative h-66 w-full hidden sm:flex">
               <Image
-                src={`http://localhost:3000${thumbnail.url}`}
+                src={`http://localhost:3000${thumbnail.sizes?.tablet?.url}`}
                 alt={thumbnail.alt!}
                 fill
                 className="object-contain object-right self-center"
@@ -65,6 +65,17 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
         </div>
       </Card>
       <blockquote>{place?.summary}</blockquote>
+      {thumbnail?.url && (
+        <div className="relative h-72 w-full flex sm:hidden my-4">
+          <Image
+            src={`http://localhost:3000${thumbnail.url}`}
+            alt={thumbnail.alt!}
+            fill
+            className="object-contain self-center rounded-md"
+          />
+        </div>
+      )}
+
       <RichText content={place?.content} />
     </Article>
   )
