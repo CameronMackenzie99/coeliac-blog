@@ -53,7 +53,7 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
             </div>
           </div>
           {thumbnail?.url && (
-            <div className="relative h-66 w-full hidden sm:flex">
+            <div className="relative h-66 w-1/2 hidden sm:flex">
               <Image
                 src={`http://localhost:3000${thumbnail.sizes?.tablet?.url}`}
                 alt={thumbnail.alt!}
