@@ -51,7 +51,7 @@ export async function Header() {
                 <Link
                   key={i}
                   href={item.link}
-                  className="hover:underline px-1 border border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)] hover:shadow-[5px_5px_0_0_rgba(252,211,77,1)] text-nowrap rounded-sm"
+                  className="hover:underline px-1 border border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)] hover:shadow-[5px_5px_0_0_rgba(252,211,77,1)] text-nowrap rounded-md"
                 >
                   {item.name}
                 </Link>

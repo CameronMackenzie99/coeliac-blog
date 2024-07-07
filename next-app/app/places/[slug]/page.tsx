@@ -58,7 +58,7 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
                 src={`http://localhost:3000${thumbnail.sizes?.tablet?.url}`}
                 alt={thumbnail.alt!}
                 fill
-                className="object-contain object-right self-center"
+                className="object-contain object-right self-center rounded-md"
               />
             </div>
           )}

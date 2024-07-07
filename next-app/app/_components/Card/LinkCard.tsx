@@ -23,7 +23,7 @@ export function Card({ href, shadowColour, children }: CardProps): React.ReactEl
   return (
     <div
       className={clsx(
-        'border  border-slate-600 rounded-sm',
+        'border  border-slate-600 rounded-md',
         shadowColours[shadowColour],
         shadowHoverColours[shadowColour],
         href ? 'hover:border-2 hover:bg-slate-100 hover:cursor-pointer' : '',
