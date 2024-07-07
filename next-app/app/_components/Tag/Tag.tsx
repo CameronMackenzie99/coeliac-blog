@@ -35,7 +35,10 @@ export function Tag({ tag }: { tag: string }) {
   }
   return (
     <button
-      className={clsx('px-2 py-0.5 rounded-xl', colourMap[tagColour])}
+      className={clsx(
+        'px-2 py-0.5 rounded-xl transition ease-in-out hover:-translate-y-1 duration-150',
+        colourMap[tagColour],
+      )}
       onClick={() => search('tag', tag)}
     >
       <span className="no-underline">{tag}</span>
