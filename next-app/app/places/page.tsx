@@ -6,6 +6,7 @@ import { formatDate } from '../_utils/utils'
 import Image from 'next/image'
 import { Search } from '../_components/Search/search'
 import { Card } from '../_components/Card/LinkCard'
+import { Article } from '../_components/Article/article'
 
 export type PageParams = {
   searchParams: {
@@ -23,7 +24,7 @@ export default async function Page({ searchParams }: PageParams) {
   }
 
   return (
-    <>
+    <Article>
       <h1>Places to eat</h1>
       <article className="flex flex-col gap-4">
         <p>Here's a list of all the coeliac friendly places that I've found and would recommend!</p>
@@ -58,6 +59,6 @@ export default async function Page({ searchParams }: PageParams) {
           </Card>
         ))}
       </article>
-    </>
+    </Article>
   )
 }

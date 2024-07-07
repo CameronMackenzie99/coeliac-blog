@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import { Article } from '../_components/Article/article'
 
 export default async function Page() {
   return (
-    <>
+    <Article>
       <h1>Hello, I’m Holly, welcome to my website!</h1>
       <article>
         <section className="flex flex-col-reverse flex-wrap-reverse sm:flex-row gap-6">
@@ -60,6 +61,6 @@ export default async function Page() {
           Thanks for reading this, and I hope you find this website useful! <br /> Holly x 🦆
         </p>
       </section>
-    </>
+    </Article>
   )
 }

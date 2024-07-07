@@ -26,9 +26,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <div className="px-4 min-w-full prose prose-slate prose-sm font-serif">
           <section className="min-h-dvh">
             <Header />
-            <div className="mx-8">
-              <article className="sm:w-2/3 mx-auto">{children}</article>
-            </div>
+            {children}
           </section>
           <Footer />
         </div>

@@ -26,5 +26,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('tailwind-extended-shadows')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwind-extended-shadows'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

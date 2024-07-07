@@ -9,13 +9,14 @@ import { formatDate } from '../../_utils/utils'
 import { Card } from '../../_components/Card/LinkCard'
 import { Tag } from '../../_components/Tag/Tag'
 import Image from 'next/image'
+import { Article } from '../../_components/Article/article'
 
 interface PageParams {
   params: { slug: string }
 }
 
 export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = ({ place: place }) => (
-  <main>
+  <Article>
     <h1>{place?.name}</h1>
     <Card shadowColour="blue">
       <div className="flex justify-between gap-4 flex-nowrap overflow-clip">
@@ -55,7 +56,7 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = ({ p
     </Card>
     <blockquote>{place?.summary}</blockquote>
     <RichText content={place?.content} />
-  </main>
+  </Article>
 )
 
 export default async function Page({ params: { slug = 'home' } }: PageParams) {
