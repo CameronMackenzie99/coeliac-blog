@@ -1,5 +1,5 @@
-import { Place } from '../../../../payload-types'
-import { fetchMedia } from '../../_api/fetchMedia'
+import { Place } from '@payload-types'
+import { fetchMedia } from '../../../_api/fetchMedia'
 import { formatDate } from '../../_utils/utils'
 import { Card } from '../Card/LinkCard'
 import Image from 'next/image'

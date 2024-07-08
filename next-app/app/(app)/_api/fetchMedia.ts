@@ -1,4 +1,4 @@
-import type { Media, Place } from '../../payload-types'
+import type { Media, Place } from '../../../payload-types'
 
 export const fetchMedia = async (id: number): Promise<Media> => {
   // const mediaQs = `&where[tags][contains]=${searchParams?.tag}` : ''

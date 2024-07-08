@@ -63,7 +63,7 @@ export function serialize(children: SerializedLexicalNode[]): string[] {
         case 'link':
           // eslint-disable-next-line no-case-declarations
           const attributes: {
-            doc?
+            doc?: any
             linkType?: 'custom' | 'internal'
             newTab?: boolean
             nofollow?: boolean

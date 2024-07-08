@@ -1,7 +1,7 @@
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-import { Place } from '../../../../payload-types'
+import { Place } from '@payload-types'
 import { fetchPlace } from '../../_api/fetchPage'
 import { fetchPlaces } from '../../_api/fetchPages'
 import RichText from '../../_components/RichText'

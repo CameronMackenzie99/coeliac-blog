@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { CMSLink } from '../CMSLink'
-import { Gutter } from '../Gutter'
 
 type MenuItem = {
   name: string
@@ -33,7 +32,7 @@ const menuItems: MenuItem[] = [
   },
 ]
 
-export async function Header() {
+export function Header() {
   const hasMenuItems = menuItems.length > 0
 
   return (

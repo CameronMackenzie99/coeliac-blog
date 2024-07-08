@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { Place } from '../../../../payload-types'
+import { Place } from '@payload-types'
 import { Button } from '../Button'
 
 export type CMSLinkType = {

@@ -1,7 +1,7 @@
 import { fetchPlaces } from './_api/fetchPages'
 import { Card } from './_components/Card/LinkCard'
 import Image from 'next/image'
-import banner from './../public/banner.png'
+import banner from '../../public/banner.png'
 import { Article } from './_components/Article/article'
 
 export default async function Page() {
