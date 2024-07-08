@@ -1,5 +1,7 @@
 import type { Place } from '../../../payload-types'
 import { PageParams } from '../places/page'
+import { getPayloadHMR } from '@payloadcms/next/utilities'
+import configPromise from '@payload-config'
 
 export const fetchPlaces = async (searchParams?: PageParams['searchParams']): Promise<Place[]> => {
   const locationQs = searchParams?.location
@@ -10,13 +12,19 @@ export const fetchPlaces = async (searchParams?: PageParams['searchParams']): Pr
 
   console.log(tagQs)
 
-  const pageRes: {
-    docs: Place[]
-  } = await fetch(
-    `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/places?depth=0&limit=100&sort=-createdAt` +
-      locationQs +
-      tagQs,
-  ).then(res => res.json()) // eslint-disable-line function-paren-newline
+  const payload = await getPayloadHMR({ config: configPromise })
 
-  return pageRes?.docs ?? []
+  const data = await payload.find({
+    collection: 'places',
+  })
+
+  // const pageRes: {
+  //   docs: Place[]
+  // } = await fetch(
+  //   `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/places?depth=0&limit=100&sort=-createdAt` +
+  //     locationQs +
+  //     tagQs,
+  // ).then(res => res.json()) // eslint-disable-line function-paren-newline
+
+  return data?.docs ?? []
 }

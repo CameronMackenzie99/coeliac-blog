@@ -1347,7 +1347,7 @@
     pluralize "8.0.0"
     ts-essentials "7.0.3"
 
-"@payloadcms/next@3.0.0-beta.59":
+"@payloadcms/next@^3.0.0-beta.59", "@payloadcms/next@3.0.0-beta.59":
   version "3.0.0-beta.59"
   resolved "https://registry.npmjs.org/@payloadcms/next/-/next-3.0.0-beta.59.tgz"
   integrity sha512-wkvbkZRM5maE2KVsSv7qlAs4+fBwCVMMHyJsHY/jtGlymWdgHwR1GK3P085MA1N9ZsiGCvtvL347bkUhSpNN/A==
