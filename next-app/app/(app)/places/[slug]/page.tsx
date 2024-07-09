@@ -55,7 +55,7 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
           {thumbnail?.url && (
             <div className="relative h-66 w-1/2 hidden sm:flex">
               <Image
-                src={`http://localhost:3000${thumbnail.sizes?.tablet?.url}`}
+                src={`${thumbnail.sizes?.tablet?.url}`}
                 alt={thumbnail.alt!}
                 fill
                 className="object-contain object-right self-center rounded-md"
@@ -68,7 +68,7 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
       {thumbnail?.url && (
         <div className="relative h-72 w-full flex sm:hidden my-4">
           <Image
-            src={`http://localhost:3000${thumbnail.url}`}
+            src={`${thumbnail.url}`}
             alt={thumbnail.alt!}
             fill
             className="object-contain self-center rounded-md"
