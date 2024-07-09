@@ -8,7 +8,7 @@ export const fetchPlaces = async (searchParams?: PageParams['searchParams']): Pr
 
   const payload = await getPayloadHMR({ config: configPromise })
 
-  const searchOperands = {
+  const data = await payload.find({
     collection: 'places',
     ...(includeWhere && {
       where: {
@@ -24,9 +24,7 @@ export const fetchPlaces = async (searchParams?: PageParams['searchParams']): Pr
         }),
       },
     }),
-  }
-
-  const data = await payload.find(searchOperands)
+  })
 
   return data?.docs ?? []
 }
