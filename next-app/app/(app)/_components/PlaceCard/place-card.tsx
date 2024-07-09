@@ -4,6 +4,7 @@ import { formatDate } from '../../_utils/utils'
 import { Card } from '../Card/LinkCard'
 import Image from 'next/image'
 import { Tag } from '../Tag/Tag'
+import { Suspense } from 'react'
 
 type PlaceCardProps = {
   place: Place
@@ -23,7 +24,11 @@ export const PlaceCard = async ({ place }: PlaceCardProps): Promise<React.JSX.El
           </div>
           <div className="flex gap-2 flex-wrap">
             {place.tags?.split(', ').map((tag, i) => {
-              return <Tag key={i} tag={tag} />
+              return (
+                <Suspense>
+                  <Tag key={i} tag={tag} />
+                </Suspense>
+              )
             })}
           </div>
         </div>

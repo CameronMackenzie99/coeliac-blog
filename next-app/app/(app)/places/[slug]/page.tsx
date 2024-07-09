@@ -11,6 +11,7 @@ import { Tag } from '../../_components/Tag/Tag'
 import Image from 'next/image'
 import { Article } from '../../_components/Article/article'
 import { fetchMedia } from '../../_api/fetchMedia'
+import { Suspense } from 'react'
 
 interface PageParams {
   params: { slug: string }
@@ -48,7 +49,9 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
             </p>
             <div className="flex gap-2">
               {place?.tags?.split(', ').map((tag, i) => (
-                <Tag key={i} tag={tag} />
+                <Suspense>
+                  <Tag key={i} tag={tag} />
+                </Suspense>
               ))}
             </div>
           </div>
