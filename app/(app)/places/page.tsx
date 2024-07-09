@@ -4,6 +4,7 @@ import { Search } from '../_components/Search/search'
 import { Article } from '../_components/Article/article'
 import { PlaceCard } from '../_components/PlaceCard/place-card'
 import { Suspense } from 'react'
+import { revalidatePath } from 'next/cache'
 
 export type PageParams = {
   searchParams: {
@@ -13,6 +14,8 @@ export type PageParams = {
 }
 
 export default async function Page({ searchParams }: PageParams) {
+  revalidatePath('/places')
+
   const places = await fetchPlaces()
   const filteredPlaces = await fetchPlaces(searchParams)
 

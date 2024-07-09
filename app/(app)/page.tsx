@@ -5,8 +5,10 @@ import banner from '../../public/banner.png'
 import { Article } from './_components/Article/article'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import configPromise from '@payload-config'
+import { revalidatePath } from 'next/cache'
 
 export default async function Page() {
+  revalidatePath('/')
   const recentPlaces = (await fetchPlaces()).slice(0, 2)
 
   const payload = await getPayloadHMR({ config: configPromise })
