@@ -101,14 +101,14 @@ export default async function Page({ params: { slug = 'home' } }: PageParams) {
   return <PlaceTemplate place={page} />
 }
 
-export async function generateStaticParams() {
-  const pages = await fetchPlaces()
+// export async function generateStaticParams() {
+//   const pages = await fetchPlaces()
 
-  return pages.map(({ slug }) =>
-    slug !== 'home'
-      ? {
-          slug,
-        }
-      : {},
-  ) // eslint-disable-line function-paren-newline
-}
+//   return pages.map(({ slug }) =>
+//     slug !== 'home'
+//       ? {
+//           slug,
+//         }
+//       : {},
+//   ) // eslint-disable-line function-paren-newline
+// }
