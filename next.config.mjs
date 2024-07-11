@@ -10,6 +10,7 @@ const nextConfig = {
         port: '3000',
         pathname: '/media/**',
       },
+      { hostname: '*.public.blob.vercel-storage.com' },
     ],
   },
   typescript: {
