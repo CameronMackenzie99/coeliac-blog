@@ -35,13 +35,13 @@ export default async function Page() {
           </div>
         </section>
         <p>
-          I do feel very grateful to have been diagnosed, and to know what was wrong . But I did
-          feel very daunted by the idea of having to eat a 100% gluten-free forever, and the
-          transition hasn’t been completely smooth-sailing. I think the thing I miss the most is
-          being able to find something or somewhere to eat spontaneously, which can be really
-          difficult when you have to avoid gluten, especially contamination. And I still remember
-          that first trip round the supermarket, and realising just how many of my favourite foods
-          (and so many random things!) contain or ‘may contain’ gluten…
+          I do feel very grateful to have been diagnosed, and to know what was wrong. But I did feel
+          very daunted by the idea of having to eat a 100% gluten-free forever, and the transition
+          hasn’t been completely smooth-sailing. I think the thing I miss the most is being able to
+          find something or somewhere to eat spontaneously, which can be really difficult when you
+          have to avoid gluten, especially cross-contamination. And I still remember that first trip
+          round the supermarket, and realising just how many of my favourite foods (and so many
+          random things!) contain or ‘may contain’ gluten…
         </p>{' '}
         <p>
           But, it’s not all bad! I am so much healthier and happier now that I know to avoid gluten,
