@@ -3,17 +3,9 @@ import { Card } from './_components/Card/LinkCard'
 import Image from 'next/image'
 import banner from '../../public/banner.png'
 import { Article } from './_components/Article/article'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
-import configPromise from '@payload-config'
-import { revalidatePath } from 'next/cache'
 
 export default async function Page() {
-  revalidatePath('/')
   const recentPlaces = (await fetchPlaces()).slice(0, 2)
-
-  const payload = await getPayloadHMR({ config: configPromise })
-  const url = payload.getAdminURL()
-  // return <div>The admin panel is running at: {url}</div>
   return (
     <>
       <h1 className="bg-amber-200 mt-[-16px] not-prose text-center text-xl py-1 font-medium border-b border-slate-600">
