@@ -13,6 +13,7 @@ import { Article } from '../../_components/Article/article'
 import { fetchMedia } from '../../_api/fetchMedia'
 import { Suspense } from 'react'
 import { ImageSkeleton } from '../../_components/Skeleton/image'
+import { revalidateTag } from 'next/cache'
 
 interface PageParams {
   params: { slug: string }
@@ -21,6 +22,7 @@ interface PageParams {
 export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = async ({
   place: place,
 }) => {
+  revalidateTag(typeof place?.slug === 'string' ? place.slug : '')
   const thumbnail =
     typeof place?.thumbnail === 'number' ? await fetchMedia(place?.thumbnail) : place?.thumbnail
 
