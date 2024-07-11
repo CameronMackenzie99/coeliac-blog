@@ -1,15 +1,27 @@
-import type { Media, Place } from '../../../payload-types'
+import { unstable_cache } from 'next/cache'
+import type { Media } from '../../../payload-types'
+import configPromise from '@payload-config'
+import { getPayloadHMR } from '@payloadcms/next/utilities'
 
 export const fetchMedia = async (id: number): Promise<Media> => {
-  // const mediaQs = `&where[tags][contains]=${searchParams?.tag}` : ''
+  return unstable_cache(
+    async () => {
+      const payload = await getPayloadHMR({ config: configPromise })
 
-  // console.log(tagQs)
+      const mediaRes = await payload.find({
+        collection: 'places',
+        where: {
+          id: {
+            equals: id,
+          },
+        },
+      })
 
-  const pageRes: {
-    docs: Place[]
-  } = await fetch(`${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/media?where[id][equals]=${id}`).then(
-    res => res.json(),
-  ) // eslint-disable-line function-paren-newline
-
-  return pageRes?.docs?.[0] ?? []
+      return mediaRes?.docs?.[0] ?? null
+    },
+    ['fetchPlace'],
+    {
+      tags: [typeof id === 'string' ? id : ''],
+    },
+  )()
 }
