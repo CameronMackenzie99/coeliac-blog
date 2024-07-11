@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { Article } from '../_components/Article/article'
 import { Suspense } from 'react'
-import { ContentSkeleton } from '../_components/Skeleton/content'
 import { ImageSkeleton } from '../_components/Skeleton/image'
 
 export default async function Page() {
