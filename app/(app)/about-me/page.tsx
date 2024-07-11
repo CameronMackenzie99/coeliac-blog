@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import { Article } from '../_components/Article/article'
+import { Suspense } from 'react'
+import { ContentSkeleton } from '../_components/Skeleton/content'
+import { ImageSkeleton } from '../_components/Skeleton/image'
 
 export default async function Page() {
   return (
@@ -22,12 +25,15 @@ export default async function Page() {
             </p>{' '}
           </div>
           <div className="relative h-96 w-72">
-            <Image
-              src="/holly.jpg"
-              alt="picture of holly drinking with a cocktail"
-              className="object-contain border self-center border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)]"
-              fill
-            />
+            <Suspense fallback={<ImageSkeleton />}>
+              <ImageSkeleton />
+              {/* <Image
+                src="/holly.jpg"
+                alt="picture of holly drinking with a cocktail"
+                className="object-contain border self-center border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)]"
+                fill
+              /> */}
+            </Suspense>
           </div>
         </section>
         <p>
