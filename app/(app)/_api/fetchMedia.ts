@@ -22,6 +22,7 @@ export const fetchMedia = async (id: number): Promise<Media> => {
     ['fetchPlace'],
     {
       tags: [typeof id === 'string' ? id : ''],
+      revalidate: 60,
     },
   )()
 }

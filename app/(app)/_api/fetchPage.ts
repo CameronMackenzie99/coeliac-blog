@@ -30,6 +30,7 @@ export const fetchPlace = async (
     ['fetchPlace'],
     {
       tags: [typeof slug === 'string' ? slug : ''],
+      revalidate: 60,
     },
   )()
 }

@@ -36,6 +36,7 @@ export const fetchPlaces = async (searchParams?: PageParams['searchParams']): Pr
         typeof searchParams?.location === 'string' ? searchParams.location : '',
         typeof searchParams?.tag === 'string' ? searchParams.tag : '',
       ],
+      revalidate: 60,
     },
   )()
 }
