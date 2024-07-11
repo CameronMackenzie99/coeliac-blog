@@ -30,7 +30,7 @@ export const fetchPlaces = async (searchParams?: PageParams['searchParams']): Pr
       })
       return data?.docs ?? []
     },
-    ['fetchPlaces'],
+    ['fetchPlaces', searchParams?.location ?? '', searchParams?.tag ?? ''],
     {
       tags: [
         typeof searchParams?.location === 'string' ? searchParams.location : '',

@@ -62,7 +62,7 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
             <div className="relative h-66 w-1/2 hidden sm:flex">
               <Suspense fallback={<ImageSkeleton />}>
                 <Image
-                  src={`${thumbnail.sizes?.tablet?.url}`}
+                  src={`${thumbnail.sizes?.tablet?.url ?? null}`}
                   alt={thumbnail.alt!}
                   fill
                   className="object-contain object-right self-center rounded-md"
