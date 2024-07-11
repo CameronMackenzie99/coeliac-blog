@@ -27,7 +27,7 @@ export const fetchPlace = async (
 
       return placeRes?.docs?.[0] ?? null
     },
-    ['fetchPlace'],
+    ['fetchPlace', slug],
     {
       tags: [typeof slug === 'string' ? slug : ''],
       revalidate: 60,
