@@ -12,7 +12,7 @@ export default async function Page() {
         Coeliac-safe recommendations, guides and recipes!
       </h1>
 
-      <Image src={banner} alt="banner" className="not-prose border-b border-slate-600" />
+      <Image src={banner} alt="banner" className="not-prose border-b border-slate-600" priority />
       <Article>
         <h2>Recent reviews:</h2>
         <div className="flex flex-col gap-4 pb-4 border-b w-full items-center justify-between">
