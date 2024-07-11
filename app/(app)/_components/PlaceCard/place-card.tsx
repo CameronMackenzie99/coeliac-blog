@@ -26,8 +26,8 @@ export const PlaceCard = async ({ place }: PlaceCardProps): Promise<React.JSX.El
           <div className="flex gap-2 flex-wrap">
             {place.tags?.split(', ').map((tag, i) => {
               return (
-                <Suspense>
-                  <Tag key={i} tag={tag} />
+                <Suspense key={i}>
+                  <Tag tag={tag} />
                 </Suspense>
               )
             })}
