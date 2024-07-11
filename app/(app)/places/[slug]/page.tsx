@@ -30,8 +30,8 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
     <Article>
       <h1>{place?.name}</h1>
       <Card shadowColour="blue">
-        <div className="flex justify-between gap-4 flex-nowrap overflow-clip">
-          <div className="not-prose flex flex-col gap-2">
+        <div className="flex justify-between gap-4">
+          <div className="not-prose flex flex-col text-wrap gap-2">
             <p>
               <b>Location:</b> {place?.location}
             </p>
@@ -50,10 +50,10 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
             <p>
               <b>Last Visited:</b> {formatDate(place?.lastDateOfVisit)}
             </p>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
               {place?.tags?.split(', ').map((tag, i) => (
-                <Suspense>
-                  <Tag key={i} tag={tag} />
+                <Suspense key={i}>
+                  <Tag tag={tag} />
                 </Suspense>
               ))}
             </div>
