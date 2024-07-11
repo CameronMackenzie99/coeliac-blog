@@ -3,8 +3,10 @@ import { Card } from './_components/Card/LinkCard'
 import Image from 'next/image'
 import banner from '../../public/banner.png'
 import { Article } from './_components/Article/article'
+import { revalidatePath } from 'next/cache'
 
 export default async function Page() {
+  revalidatePath('/')
   const recentPlaces = (await fetchPlaces()).slice(0, 2)
   return (
     <>
