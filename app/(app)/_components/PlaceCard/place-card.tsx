@@ -5,6 +5,7 @@ import { Card } from '../Card/LinkCard'
 import Image from 'next/image'
 import { Tag } from '../Tag/Tag'
 import { Suspense } from 'react'
+import { ImageSkeleton } from '../Skeleton/image'
 
 type PlaceCardProps = {
   place: Place
@@ -34,12 +35,14 @@ export const PlaceCard = async ({ place }: PlaceCardProps): Promise<React.JSX.El
         </div>
         <div>
           <div className="relative h-60 w-60 hidden md:flex">
-            <Image
-              src={`${thumbnail?.url ?? ''}`}
-              alt={thumbnail?.alt ?? ''}
-              fill
-              className="object-contain object-right self-center"
-            />
+            <Suspense fallback={<ImageSkeleton />}>
+              <Image
+                src={`${thumbnail?.url ?? ''}`}
+                alt={thumbnail?.alt ?? ''}
+                fill
+                className="object-contain object-right self-center"
+              />
+            </Suspense>
           </div>
         </div>
       </div>

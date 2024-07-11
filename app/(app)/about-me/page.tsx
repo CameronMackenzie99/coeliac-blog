@@ -26,13 +26,12 @@ export default async function Page() {
           </div>
           <div className="relative h-96 w-72">
             <Suspense fallback={<ImageSkeleton />}>
-              <ImageSkeleton />
-              {/* <Image
+              <Image
                 src="/holly.jpg"
                 alt="picture of holly drinking with a cocktail"
                 className="object-contain border self-center border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)]"
                 fill
-              /> */}
+              />
             </Suspense>
           </div>
         </section>

@@ -12,6 +12,7 @@ import Image from 'next/image'
 import { Article } from '../../_components/Article/article'
 import { fetchMedia } from '../../_api/fetchMedia'
 import { Suspense } from 'react'
+import { ImageSkeleton } from '../../_components/Skeleton/image'
 
 interface PageParams {
   params: { slug: string }
@@ -57,12 +58,14 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
           </div>
           {thumbnail?.url && (
             <div className="relative h-66 w-1/2 hidden sm:flex">
-              <Image
-                src={`${thumbnail.sizes?.tablet?.url}`}
-                alt={thumbnail.alt!}
-                fill
-                className="object-contain object-right self-center rounded-md"
-              />
+              <Suspense fallback={<ImageSkeleton />}>
+                <Image
+                  src={`${thumbnail.sizes?.tablet?.url}`}
+                  alt={thumbnail.alt!}
+                  fill
+                  className="object-contain object-right self-center rounded-md"
+                />
+              </Suspense>
             </div>
           )}
         </div>
@@ -70,12 +73,14 @@ export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = asyn
       <blockquote>{place?.summary}</blockquote>
       {thumbnail?.url && (
         <div className="relative h-72 w-full flex sm:hidden my-4">
-          <Image
-            src={`${thumbnail.url}`}
-            alt={thumbnail.alt!}
-            fill
-            className="object-contain self-center rounded-md"
-          />
+          <Suspense fallback={<ImageSkeleton />}>
+            <Image
+              src={`${thumbnail.url}`}
+              alt={thumbnail.alt!}
+              fill
+              className="object-contain self-center rounded-md"
+            />
+          </Suspense>
         </div>
       )}
 
