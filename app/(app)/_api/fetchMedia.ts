@@ -19,7 +19,7 @@ export const fetchMedia = async (id: number): Promise<Media> => {
 
       return mediaRes?.docs?.[0] ?? null
     },
-    ['fetchPlace'],
+    ['fetchMedia', 'id'],
     {
       tags: [typeof id === 'string' ? id : ''],
       revalidate: 60,
