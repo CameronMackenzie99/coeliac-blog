@@ -17,6 +17,7 @@ async headers() {
     ]
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
