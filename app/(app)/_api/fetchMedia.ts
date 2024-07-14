@@ -16,7 +16,7 @@ export const fetchMedia = async (id: number): Promise<Media> => {
           },
         },
       })
-
+      console.log('fetchMedia result', mediaRes)
       return mediaRes?.docs?.[0] ?? null
     },
     ['fetchMedia', 'id'],
