@@ -9,7 +9,7 @@ export const fetchMedia = async (id: number): Promise<Media> => {
       const payload = await getPayloadHMR({ config: configPromise })
 
       const mediaRes = await payload.find({
-        collection: 'places',
+        collection: 'media',
         where: {
           id: {
             equals: id,
