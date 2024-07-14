@@ -15,8 +15,7 @@ async headers() {
         ]
       }
     ]
-  }
-};
+  },
   images: {
     remotePatterns: [
       {
