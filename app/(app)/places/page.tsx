@@ -27,7 +27,10 @@ export default async function Page({ searchParams }: PageParams) {
     <Article>
       <h1>Places to eat</h1>
       <article className="flex flex-col gap-4">
-        <p>Here's a list of all the coeliac friendly places that I've found and would recommend!</p>
+        <p>
+          Here&apos;s a list of all the coeliac friendly places that I&apos;ve found and would
+          recommend!
+        </p>
         <Suspense>
           <Search places={places} />
         </Suspense>
