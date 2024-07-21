@@ -19,9 +19,7 @@ interface PageParams {
   params: { slug: string }
 }
 
-export const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = async ({
-  place: place,
-}) => {
+const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = async ({ place: place }) => {
   revalidateTag(typeof place?.slug === 'string' ? place.slug : '')
   const thumbnail =
     typeof place?.thumbnail === 'number' ? await fetchMedia(place?.thumbnail) : place?.thumbnail

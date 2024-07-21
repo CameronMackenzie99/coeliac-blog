@@ -10,7 +10,7 @@ import {
 } from './richTextNodeFormat'
 import type { SerializedLexicalNode } from './types'
 
-function getLinkForPage(doc) {
+function getLinkForPage(doc: any) {
   return 'implement this'
 }
 
