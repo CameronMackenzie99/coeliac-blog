@@ -57,7 +57,7 @@ const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = async ({ pl
             </div>
           </div>
           {thumbnail?.url && (
-            <div className="relative h-66 w-1/2 hidden sm:flex">
+            <div className="relative h-66 w-1/2 hidden sm:flex py-2">
               <Suspense fallback={<ImageSkeleton />}>
                 <Image
                   src={`${thumbnail.sizes?.tablet?.url ?? null}`}
@@ -101,14 +101,14 @@ export default async function Page({ params: { slug = 'home' } }: PageParams) {
   return <PlaceTemplate place={page} />
 }
 
-// export async function generateStaticParams() {
-//   const pages = await fetchPlaces()
+export async function generateStaticParams() {
+  const pages = await fetchPlaces()
 
-//   return pages.map(({ slug }) =>
-//     slug !== 'home'
-//       ? {
-//           slug,
-//         }
-//       : {},
-//   ) // eslint-disable-line function-paren-newline
-// }
+  return pages.map(({ slug }) =>
+    slug !== 'home'
+      ? {
+          slug,
+        }
+      : {},
+  )
+}
