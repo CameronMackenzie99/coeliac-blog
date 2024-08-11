@@ -33,6 +33,7 @@
     "babel-plugin-react-compiler": "^0.0.0-experimental-592953e-20240517",
     "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
+    "dotenv-expand": "^11.0.6",
     "escape-html": "^1.0.3",
     "graphql": "^16.8.2",
     "next": "15.0.0-canary.104",

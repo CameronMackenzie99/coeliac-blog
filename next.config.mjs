@@ -1,6 +1,11 @@
 import { withPayload } from '@payloadcms/next/withPayload'
 
 /** @type {import('next').NextConfig} */
+
+import dotenvExpand from 'dotenv-expand'
+
+dotenvExpand.expand({ parsed: { ...process.env } })
+
 const nextConfig = {
   async headers() {
     return [
