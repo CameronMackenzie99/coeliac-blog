@@ -60,7 +60,7 @@ const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = async ({ pl
             <div className="relative h-66 w-1/2 hidden sm:flex py-2">
               <Suspense fallback={<ImageSkeleton />}>
                 <Image
-                  src={`${thumbnail.sizes?.tablet?.url ?? null}`}
+                  src={`${process.env.NEXT_PUBLIC_URL}${thumbnail.sizes?.tablet?.url ?? null}`}
                   alt={thumbnail.alt!}
                   fill
                   className="object-contain object-right self-center rounded-md"
@@ -75,7 +75,7 @@ const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = async ({ pl
         <div className="relative h-72 w-full flex sm:hidden my-4">
           <Suspense fallback={<ImageSkeleton />}>
             <Image
-              src={`${thumbnail.url}`}
+              src={`${process.env.NEXT_PUBLIC_URL}${thumbnail.url}`}
               alt={thumbnail.alt!}
               fill
               className="object-contain self-center rounded-md"

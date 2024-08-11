@@ -37,7 +37,7 @@ export const PlaceCard = async ({ place }: PlaceCardProps): Promise<React.JSX.El
           <div className="relative h-60 w-60 hidden md:flex">
             <Suspense fallback={<ImageSkeleton />}>
               <Image
-                src={`${thumbnail?.url ?? ''}`}
+                src={`${process.env.NEXT_PUBLIC_URL}${thumbnail?.url ?? ''}`}
                 alt={thumbnail?.alt ?? ''}
                 fill
                 className="object-contain object-right self-center"
