@@ -19,7 +19,6 @@ export default buildConfig({
   },
   collections: [Users, Media, Places],
   editor: lexicalEditor(),
-  serverURL: process.env.NEXT_PUBLIC_URL,
   cors: ['*'],
   secret: process.env.PAYLOAD_SECRET || 'test',
   typescript: {
