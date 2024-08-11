@@ -20,9 +20,7 @@ export default buildConfig({
   collections: [Users, Media, Places],
   editor: lexicalEditor(),
   serverURL: process.env.NEXT_PUBLIC_URL,
-  cors: {
-    origins: [process.env.NEXT_PUBLIC_URL ?? ''],
-  },
+  cors: ['*'],
   secret: process.env.PAYLOAD_SECRET || 'test',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
