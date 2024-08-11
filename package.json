@@ -20,13 +20,13 @@
     "node": "^18.20.2 || >=20.9.0"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "3.0.0-beta.71",
-    "@payloadcms/db-postgres": "3.0.0-beta.71",
-    "@payloadcms/next": "3.0.0-beta.71",
-    "@payloadcms/richtext-lexical": "3.0.0-beta.71",
-    "@payloadcms/richtext-slate": "3.0.0-beta.71",
-    "@payloadcms/storage-vercel-blob": "3.0.0-beta.71",
-    "@payloadcms/ui": "3.0.0-beta.71",
+    "@payloadcms/db-mongodb": "3.0.0-beta.76",
+    "@payloadcms/db-postgres": "3.0.0-beta.76",
+    "@payloadcms/next": "3.0.0-beta.76",
+    "@payloadcms/richtext-lexical": "3.0.0-beta.76",
+    "@payloadcms/richtext-slate": "3.0.0-beta.76",
+    "@payloadcms/storage-vercel-blob": "3.0.0-beta.76",
+    "@payloadcms/ui": "3.0.0-beta.76",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/escape-html": "^1.0.4",
     "@vercel/analytics": "^1.3.1",
@@ -35,15 +35,15 @@
     "cross-env": "^7.0.3",
     "escape-html": "^1.0.3",
     "graphql": "^16.8.2",
-    "next": "15.0.0-canary.77",
-    "payload": "3.0.0-beta.71",
-    "react": "19.0.0-rc-6230622a1a-20240610",
-    "react-dom": "19.0.0-rc-6230622a1a-20240610",
+    "next": "15.0.0-canary.104",
+    "payload": "3.0.0-beta.76",
+    "react": "19.0.0-rc-06d0b89e-20240801",
+    "react-dom": "19.0.0-rc-06d0b89e-20240801",
     "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.9.1",
-    "@payloadcms/graphql": "3.0.0-beta.71",
+    "@payloadcms/graphql": "3.0.0-beta.76",
     "@playwright/test": "^1.45.1",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20.14.9",
@@ -51,11 +51,11 @@
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-config-next": "15.0.0-rc.0",
+    "eslint-config-next": "15.0.0-canary.104",
     "postcss": "^8.4.39",
     "tailwind-extended-shadows": "^0.4.0",
     "tailwindcss": "^3.4.4",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   },
   "pnpm": {
     "overrides": {
