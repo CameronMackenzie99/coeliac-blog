@@ -8,6 +8,7 @@ dotenvExpand.expand({ parsed: { ...process.env } })
 
 const nextConfig = {
   images: {
+    unoptimized: true,
     minimumCacheTTL: 0,
     remotePatterns: [
       {
