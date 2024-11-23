@@ -27,7 +27,7 @@ export default async function Page(props: PageParams) {
         <Suspense>
           <Search places={places} />
         </Suspense>
-        {filteredPlaces.length === 0 ? filteredPlaces.map((place, i) => (
+        {filteredPlaces.length > 0 ? filteredPlaces.map((place, i) => (
           <PlaceCard place={place} key={i} />
         )) : "No results found!"}
       </article>
