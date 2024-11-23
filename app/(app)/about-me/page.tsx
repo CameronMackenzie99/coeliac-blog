@@ -6,7 +6,7 @@ import { ImageSkeleton } from '../_components/Skeleton/image'
 export default async function Page() {
   return (
     <Article>
-      <h1>Hello, I’m Holly, welcome to my website!</h1>
+      <h1>Hello, welcome to my website!</h1>
       <article>
         <section className="flex flex-col-reverse flex-wrap-reverse sm:flex-row gap-6">
           <div className="basis-1/2 flex-grow">
