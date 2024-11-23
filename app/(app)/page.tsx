@@ -5,8 +5,8 @@ import banner from '../../public/banner.png'
 import { Article } from './_components/Article/article'
 import { revalidatePath } from 'next/cache'
 
+// revalidatePath('/')
 export default async function Page() {
-  revalidatePath('/')
   const recentPlaces = (await fetchPlaces()).slice(0, 2)
   return (
     <>

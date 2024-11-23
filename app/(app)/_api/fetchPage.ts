@@ -8,7 +8,7 @@ import { unstable_cache } from 'next/cache'
 
 export const fetchPlace = async (
   slug: string,
-  draft?: boolean,
+  // draft?: boolean,
 ): Promise<Place | undefined | null> => {
   // let payloadToken: RequestCookie | undefined
 

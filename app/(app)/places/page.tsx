@@ -14,7 +14,7 @@ export type PageParams = {
 }
 
 export default async function Page({ searchParams }: PageParams) {
-  revalidatePath('/places')
+  // revalidatePath('/places')
 
   const places = await fetchPlaces()
   const filteredPlaces = await fetchPlaces(searchParams)
