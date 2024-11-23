@@ -2,19 +2,19 @@ import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
 
 import type { Place } from '../../../payload-types'
 
-import { getPayloadHMR } from '@payloadcms/next/utilities'
+import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { unstable_cache } from 'next/cache'
 
 export const fetchPlace = async (
   slug: string,
-  draft?: boolean,
+  // draft?: boolean,
 ): Promise<Place | undefined | null> => {
   // let payloadToken: RequestCookie | undefined
 
   return unstable_cache(
     async () => {
-      const payload = await getPayloadHMR({ config: configPromise })
+      const payload = await getPayload({ config: configPromise })
 
       const placeRes = await payload.find({
         collection: 'places',

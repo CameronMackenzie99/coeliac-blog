@@ -13,14 +13,12 @@ import { Article } from '../../_components/Article/article'
 import { fetchMedia } from '../../_api/fetchMedia'
 import { Suspense } from 'react'
 import { ImageSkeleton } from '../../_components/Skeleton/image'
-import { revalidateTag } from 'next/cache'
 
-interface PageParams {
-  params: { slug: string }
+export type PageParams = {
+  params: Promise<{ slug: string }>
 }
 
 const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = async ({ place: place }) => {
-  revalidateTag(typeof place?.slug === 'string' ? place.slug : '')
   const thumbnail =
     typeof place?.thumbnail === 'number' ? await fetchMedia(place?.thumbnail) : place?.thumbnail
 
@@ -89,10 +87,16 @@ const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = async ({ pl
   )
 }
 
-export default async function Page({ params: { slug = 'home' } }: PageParams) {
-  const { isEnabled: isDraftMode } = draftMode()
+export default async function Page(props: PageParams) {
+  const params = await props.params;
 
-  const page = await fetchPlace(slug, isDraftMode)
+  const {
+    slug = 'home'
+  } = params;
+
+  // const { isEnabled: isDraftMode } = draftMode()
+
+  const page = await fetchPlace(slug)
 
   if (page === null) {
     return notFound()

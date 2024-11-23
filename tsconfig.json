@@ -1,6 +1,7 @@
-{
+
+  {
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": ".",
     "lib": [
       "dom",
       "dom.iterable",
@@ -9,11 +10,10 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -23,7 +23,7 @@
         "name": "next"
       }
     ],
-    "paths": {
+  "paths": {
       "@/*": [
         "./src/*"
       ],
@@ -36,7 +36,8 @@
       "@public": [
         "./public"
       ]
-    }
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",

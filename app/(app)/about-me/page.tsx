@@ -6,7 +6,7 @@ import { ImageSkeleton } from '../_components/Skeleton/image'
 export default async function Page() {
   return (
     <Article>
-      <h1>Hello, I’m Holly, welcome to my website!</h1>
+      <h1>Hello, welcome to my website!</h1>
       <article>
         <section className="flex flex-col-reverse flex-wrap-reverse sm:flex-row gap-6">
           <div className="basis-1/2 flex-grow">
@@ -22,16 +22,6 @@ export default async function Page() {
               the craft-beer and sourdough-baking bandwagons, and that was just too much gluten for
               my body to handle!).
             </p>{' '}
-          </div>
-          <div className="relative h-96 w-72">
-            <Suspense fallback={<ImageSkeleton />}>
-              <Image
-                src="/holly.jpg"
-                alt="picture of holly drinking with a cocktail"
-                className="object-contain border self-center border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)]"
-                fill
-              />
-            </Suspense>
           </div>
         </section>
         <p>
@@ -63,7 +53,7 @@ export default async function Page() {
           gluten-avoiders.
         </p>{' '}
         <p>
-          Thanks for reading this, and I hope you find this website useful! <br /> Holly x 🦆
+          Thanks for reading this, and I hope you find this website useful! <br /> 🦆
         </p>
       </section>
     </Article>

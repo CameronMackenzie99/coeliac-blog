@@ -1,12 +1,12 @@
 import { unstable_cache } from 'next/cache'
 import type { Media } from '../../../payload-types'
 import configPromise from '@payload-config'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
+import { getPayload } from 'payload'
 
 export const fetchMedia = async (id: number): Promise<Media> => {
   return unstable_cache(
     async () => {
-      const payload = await getPayloadHMR({ config: configPromise })
+      const payload = await getPayload({ config: configPromise })
 
       const mediaRes = await payload.find({
         collection: 'media',
