@@ -23,16 +23,6 @@ export default async function Page() {
               my body to handle!).
             </p>{' '}
           </div>
-          <div className="relative h-96 w-72">
-            <Suspense fallback={<ImageSkeleton />}>
-              <Image
-                src="/holly.jpg"
-                alt="picture of holly drinking with a cocktail"
-                className="object-contain border self-center border-slate-600 shadow-[3px_3px_0_0_rgba(252,211,77,0.8)]"
-                fill
-              />
-            </Suspense>
-          </div>
         </section>
         <p>
           I do feel very grateful to have been diagnosed, and to know what was wrong. But I did feel
@@ -63,7 +53,7 @@ export default async function Page() {
           gluten-avoiders.
         </p>{' '}
         <p>
-          Thanks for reading this, and I hope you find this website useful! <br /> Holly x 🦆
+          Thanks for reading this, and I hope you find this website useful! <br /> 🦆
         </p>
       </section>
     </Article>
