@@ -4,17 +4,14 @@ import { Search } from '../_components/Search/search'
 import { Article } from '../_components/Article/article'
 import { PlaceCard } from '../_components/PlaceCard/place-card'
 import { Suspense } from 'react'
-import { revalidatePath } from 'next/cache'
+import { SearchParams } from './types'
 
 export type PageParams = {
-  searchParams: {
-    location?: string
-    tag?: string
-  }
+  searchParams: Promise<SearchParams>
 }
 
-export default async function Page({ searchParams }: PageParams) {
-  // revalidatePath('/places')
+export default async function Page(props: PageParams) {
+  const searchParams = await props.searchParams;
 
   const places = await fetchPlaces()
   const filteredPlaces = await fetchPlaces(searchParams)

@@ -15,9 +15,9 @@ import { Suspense } from 'react'
 import { ImageSkeleton } from '../../_components/Skeleton/image'
 import { revalidateTag } from 'next/cache'
 
-type PageParams = Promise<{
-  params: { slug: string }
-}>
+export type PageParams = {
+  params: Promise<{ slug: string }>
+}
 
 const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = async ({ place: place }) => {
   revalidateTag(typeof place?.slug === 'string' ? place.slug : '')
@@ -89,7 +89,13 @@ const PlaceTemplate: React.FC<{ place: Place | null | undefined }> = async ({ pl
   )
 }
 
-export default async function Page({ params: { slug = 'home' } }: PageParams) {
+export default async function Page(props: PageParams) {
+  const params = await props.params;
+
+  const {
+    slug = 'home'
+  } = params;
+
   // const { isEnabled: isDraftMode } = draftMode()
 
   const page = await fetchPlace(slug)
