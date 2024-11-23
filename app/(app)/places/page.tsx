@@ -16,10 +16,6 @@ export default async function Page(props: PageParams) {
   const places = await fetchPlaces()
   const filteredPlaces = await fetchPlaces(searchParams)
 
-  if (filteredPlaces === null || filteredPlaces.length === 0) {
-    return notFound()
-  }
-
   return (
     <Article>
       <h1>Places to eat</h1>
@@ -31,9 +27,9 @@ export default async function Page(props: PageParams) {
         <Suspense>
           <Search places={places} />
         </Suspense>
-        {filteredPlaces.map((place, i) => (
+        {filteredPlaces.length === 0 ? filteredPlaces.map((place, i) => (
           <PlaceCard place={place} key={i} />
-        ))}
+        )) : "No results found!"}
       </article>
     </Article>
   )
